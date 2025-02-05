@@ -1,0 +1,46 @@
+.vfrc-message.vfrc-message--extension-OpenAIAssistantsV2._1ddzqsn7 {
+    color: #1a1e23;
+    font-family: Open Sans; 
+    position: relative;
+    min-height: 41px;
+    min-width: 64px;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 11px 16px 10px;
+}
+
+.vfrc-message.vfrc-message--extension-OpenAIAssistantsV2._1ddzqsn7 img {
+    max-width: 100%;
+    display: block;
+    margin: 10px 0;
+}
+
+.response-container ol {
+    margin-left: -20px; 
+    padding-left: 0;    
+}
+
+.response-container {
+    margin-left: -1px;
+}
+
+.response-container ol p {
+    margin-left: 20px; 
+}
+
+.response-container ol {
+    list-style-position: inside; 
+    padding-left: 20px; 
+}
+
+.response-container ul {
+    padding-left: 25px; 
+}
+
+.response-container ol li p {
+    margin: 0;
+    padding-left: 20px;
+}
