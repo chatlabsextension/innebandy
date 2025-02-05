@@ -51085,7 +51085,7 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
       (e = arguments[n++]) && (t = y4(e)) && (a && (a += " "), (a += t));
     return a;
   }
-  const AS = "https://chatlabsextension.github.io/CannaoneDK";
+  const AS = "https://chatlabsextension.github.io/innebandy";
   var TS = ((e) => (
       (e.START_CHAT = "vfrc-start-chat"),
       (e.SEND_MESSAGE = "vfrc-send-message"),
