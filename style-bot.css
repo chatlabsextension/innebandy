@@ -38,9 +38,28 @@
 
 .response-container ul {
     padding-left: 25px; 
+    list-style-type: none;
+    padding-inline-start: 27px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    position: relative;
 }
 
 .response-container ol li p {
     margin: 0;
     padding-left: 20px;
 }
+
+.markdown ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 0; 
+    position: relative;
+  }
+
+  .response-container li {
+    padding-bottom: 20px;
+  }
