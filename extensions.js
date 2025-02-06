@@ -2504,6 +2504,7 @@ export const OpenAIAssistantsV2Extension = {
             body: JSON.stringify({
               assistant_id: assistantId,
               stream: true,
+              tool_choice: { type: "file_search" }, 
               thread: {
                 messages: [{ role: "user", content: userMessage }],
               },
@@ -2534,7 +2535,11 @@ export const OpenAIAssistantsV2Extension = {
               "Content-Type": "application/json",
               "OpenAI-Beta": "assistants=v2",
             },
-            body: JSON.stringify({ assistant_id: assistantId, stream: true }),
+            body: JSON.stringify({
+              assistant_id: assistantId,
+              stream: true,
+              tool_choice: { type: "file_search" }, // Enforce file_search
+            }),
           }
         );
       }
