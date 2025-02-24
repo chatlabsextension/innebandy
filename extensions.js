@@ -2538,7 +2538,7 @@ export const OpenAIAssistantsV2Extension = {
             body: JSON.stringify({
               assistant_id: assistantId,
               stream: true,
-              tool_choice: { type: "file_search" }, // Enforce file_search
+              tool_choice: { type: "file_search" } // Enforce file_search
             }),
           }
         );
