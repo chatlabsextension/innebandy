@@ -2504,7 +2504,7 @@ export const OpenAIAssistantsV2Extension = {
             body: JSON.stringify({
               assistant_id: assistantId,
               stream: true,
-              max_tokens: 400
+              max_tokens: 400,
               tool_choice: { type: "file_search" }, 
               thread: {
                 messages: [{ role: "user", content: userMessage }],
