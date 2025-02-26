@@ -462,7 +462,7 @@ export const FeedbackExtension = {
   name: "Feedback",
   type: "response",
   match: ({ trace }) =>
-    trace.type === "ext_feedback" || trace.payload?.name === "ext_feedback",
+    trace.type === "ext_feedback" || trace.payload.name === "ext_feedback",
   render: ({ trace, element }) => {
     const feedbackContainer = document.createElement("div");
 
@@ -767,7 +767,7 @@ export const DisableInputExtension = {
   type: "effect",
   match: ({ trace }) =>
     trace.type === "ext_disableInput" ||
-    trace.payload?.name === "ext_disableInput",
+    trace.payload.name === "ext_disableInput",
   effect: ({ trace }) => {
     const { isDisabled } = trace.payload;
 
@@ -1445,7 +1445,7 @@ export const CustomScreenExtension = {
   match: ({ trace }) => {
     return (
       trace.type === "ext_customScreen" ||
-      trace.payload?.name === "ext_customScreen"
+      trace.payload.name === "ext_customScreen"
     );
   },
   effect: ({ trace }) => {
@@ -2018,19 +2018,18 @@ export const PlaceholderExtension = {
   type: "effect",
   match: ({ trace }) =>
     trace.type === "ext_placeholder" ||
-    trace.payload?.name === "ext_placeholder",
+    trace.payload.name === "ext_placeholder",
   effect: ({ trace }) => {
     const chatDiv = document.getElementById("voiceflow-chat");
-    if (!chatDiv) return;
-    
     const shadowRoot = chatDiv.shadowRoot;
-    if (!shadowRoot) return;
-    
     const textarea = shadowRoot.querySelector("textarea");
-    if (!textarea) return;
+    const button = shadowRoot.querySelector(
+      ".vfrc-chat-input--button.c-iSWgdS"
+    );
 
     const fadeDuration = trace.payload.fadeDuration ?? 0;
     const blankDuration = trace.payload.blankDuration ?? 0;
+
     const newPlaceholder = trace.payload.placeholder || "Ask a question...";
 
     const applyPlaceholderAnimation = (element, newPlaceholder) => {
@@ -2049,7 +2048,17 @@ export const PlaceholderExtension = {
       }, fadeDuration + blankDuration);
     };
 
+    const applyButtonAnimation = (element) => {
+      element.style.transition = `opacity ${fadeDuration}ms ease`;
+      element.style.opacity = "0";
+
+      setTimeout(() => {
+        element.style.opacity = "1";
+      }, fadeDuration + blankDuration);
+    };
+
     applyPlaceholderAnimation(textarea, newPlaceholder);
+    applyButtonAnimation(button);
   },
 };
 
@@ -2282,7 +2291,7 @@ export const FeedbackSpintsoExtension = {
   type: "response",
   match: ({ trace }) =>
     trace.type === "Custom_Feedback" ||
-    trace.payload?.name === "Custom_Feedback",
+    trace.payload.name === "Custom_Feedback",
   render: ({ trace, element }) => {
     console.log(`Trace from FeedbackExtension: `, trace);
 
