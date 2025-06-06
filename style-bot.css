@@ -58,3 +58,17 @@
   margin: 0;
   display: inline-block;
 }
+
+.jyiuei4::after {
+  content: "Svensk Innebandy"; 
+  color: rgb(255, 255, 255); 
+  position: absolute;
+  left: 0;
+}
+
+.jyiuei4 {
+  display: inline-block;  
+  overflow: visible; 
+  color: transparent; 
+  position: relative;
+}
